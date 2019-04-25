@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>View</title>
+</head>
+<body>
+<div ng-controller="phoneController">
+    <div ng-repeat="button in modes">
+        <label>
+            <input type="radio" ng-model="data.mode" value="{{button.value}}" name="modes" />
+            {{button.label}}
+        </label>
+    </div>
+    <div ng-include="setFile()"></div>
+
+
+    <ng-include src="'phonesList.html'"></ng-include>
+
+
+</div>
+<script src="js/lib/angular.min.js"></script>
+<script type="text/javascript">
+    angular.module('myApp', []);
+</script>
+<script src="js/controllers/phonesController.js"></script>
+
+</body>
+</html>
